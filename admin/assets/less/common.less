@@ -1,0 +1,183 @@
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.col-center {
+  align-items: center;
+}
+
+.col-top {
+  align-items: flex-start;
+}
+
+.col-bottom {
+  align-items: flex-end;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+.row-left {
+  justify-content: flex-start;
+}
+
+.row-right {
+  justify-content: flex-end;
+}
+
+.row-between {
+  justify-content: space-between;
+}
+
+.row-around {
+  justify-content: space-around;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* start--文本行数限制--start */
+.line-1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.line-2 {
+  -webkit-line-clamp: 2;
+}
+
+.line-3 {
+  -webkit-line-clamp: 3;
+}
+
+.line-4 {
+  -webkit-line-clamp: 4;
+}
+
+.line-5 {
+  -webkit-line-clamp: 5;
+}
+
+.line-2,
+.line-3,
+.line-4,
+.line-5 {
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box; // 弹性伸缩盒
+  -webkit-box-orient: vertical; // 设置伸缩盒子元素排列方式
+}
+
+/* 定义flex等分 */
+.flex(@num) when (@num <=12) {
+  .flex-@{num} {
+    flex: @num;
+  }
+
+  .flex((@num + 1));
+}
+
+.flex(1);
+
+/* 定义字号，10 - 40 */
+.font(@num) when (@num <=40) {
+  .font-@{num} {
+    font-size: (@num * 1px);
+  }
+
+  .font((@num + 1));
+}
+
+.font(10);
+
+/* 定义内外边距 */
+.distance(@num) when (@num <=20) {
+  @name: (@num * 5);
+
+  .m-@{name} {
+    margin: (@num * 5px);
+  }
+
+  .p-@{name} {
+    padding: (@num * 5px);
+  }
+
+  .distance((@num + 1));
+}
+
+.distance(1);
+
+/* 定义内外边距 */
+.distance2(@num) when (@num <=30) {
+  .m-t-@{num} {
+    margin-top: (@num * 1px);
+  }
+
+  .m-r-@{num} {
+    margin-right: (@num * 1px);
+  }
+
+  .m-b-@{num} {
+    margin-bottom: (@num * 1px);
+  }
+
+  .m-l-@{num} {
+    margin-left: (@num * 1px);
+  }
+
+  .p-t-@{num} {
+    padding-top: (@num * 1px);
+  }
+
+  .p-r-@{num} {
+    padding-right: (@num * 1px);
+  }
+
+  .p-b-@{num} {
+    padding-bottom: (@num * 1px);
+  }
+
+  .p-l-@{num} {
+    padding-left: (@num * 1px);
+  }
+
+  .distance2((@num + 1));
+}
+
+.distance2(1);

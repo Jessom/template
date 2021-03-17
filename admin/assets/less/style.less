@@ -1,0 +1,104 @@
+#nprogress .bar {
+  background-color: var(--theme) !important;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--theme), 0 0 5px var(--theme) !important;
+}
+#nprogress .spinner-icon {
+  border-top-color: var(--theme) !important;
+  border-left-color: var(--theme) !important;
+}
+body { background-color: #f0f2f5; }
+
+.container {
+  padding: 24px;
+}
+
+.ant-money {
+  position: relative;
+  &::before {
+    content: "￥";
+    font-size: 60%;
+    color: inherit;
+  }
+}
+
+.title-container {
+  .title {
+    font-size: 28px;
+    color: var(--main-color);
+    margin-bottom: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .info {
+    font-size: 12px;
+    color: var(--tip-color);
+    font-weight: 400;
+
+    .meta {
+      display: inline-block;
+    }
+    span {
+      margin-right: 18px;
+      color: var(--tip-color);
+    }
+  }
+}
+.article-content {
+  margin-top: 30px;
+}
+
+
+.table-page-search-wrapper {
+  .ant-form-inline {
+    .ant-form-item {
+      display: flex;
+      margin-bottom: 24px;
+      margin-right: 0;
+
+      .ant-form-item-control-wrapper {
+        flex: 1 1;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      > .ant-form-item-label {
+        line-height: 32px;
+        padding-right: 8px;
+        width: auto;
+      }
+      .ant-form-item-control {
+        height: 32px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  .table-page-search-submitButtons {
+    display: block;
+    margin-bottom: 24px;
+    white-space: nowrap;
+  }
+}
+
+@font-face {
+  font-family: 'webfont';
+  font-display: swap;
+  src: url('https://at.alicdn.com/t/webfont_0xtvk3pecl18.eot'); /* IE9*/
+  src: url('https://at.alicdn.com/t/webfont_0xtvk3pecl18.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('https://at.alicdn.com/t/webfont_0xtvk3pecl18.woff2') format('woff2'),
+  url('https://at.alicdn.com/t/webfont_0xtvk3pecl18.woff') format('woff'), /* chrome、firefox */
+  url('https://at.alicdn.com/t/webfont_0xtvk3pecl18.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('https://at.alicdn.com/t/webfont_0xtvk3pecl18.svg#杨任东竹石体-Bold') format('svg'); /* iOS 4.1- */
+}
+
+.card-grid-list {
+  & > .ant-card-body {
+    padding: 0;
+  }
+  .ant-card-bordered {
+    border: 0;
+    box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, inset 1px 0 0 0 #e8e8e8, inset 0 1px 0 0 #e8e8e8;
+  }
+}
