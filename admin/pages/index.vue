@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-03-18 16:16:03
+ * @LastEditTime: 2021-03-18 16:30:12
  * @LastEditors: watasi
 -->
 <template>
@@ -40,7 +40,8 @@
           </a-tooltip>
 
           <div>
-            <mini-area :data="line" />
+            <!-- <mini-area :data="line" /> -->
+            <mini-line :data="line" :opacity="1" />
           </div>
 
           <template slot="footer">日访问量<span> {{ '1234' | NumberFormat }}</span></template>
@@ -109,7 +110,7 @@
           <a-tab-pane tab="访问量" key="2" forceRender>
             <a-row>
               <a-col :span="16">
-                <line-chart :data="line" />
+                <line-chart :data="line" :opacity="0.3" />
               </a-col>
 
               <a-col :span="8">

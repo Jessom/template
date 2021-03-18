@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-18 11:11:13
- * @LastEditTime: 2021-03-18 16:05:14
+ * @LastEditTime: 2021-03-18 16:30:03
  * @LastEditors: watasi
 -->
 <template>
@@ -23,6 +23,10 @@ export default {
     data: {
       type: [Array, Object],
       required: true
+    },
+    opacity: {
+      type: Number,
+      default: 0
     }
   },
 
@@ -76,6 +80,9 @@ export default {
             type: "line",
             smooth: true,
             showSymbol: false,
+            areaStyle: {
+              opacity: this.opacity,
+            },
             data: y,
           },
         ],
