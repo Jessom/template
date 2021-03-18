@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-03-18 10:19:59
+ * @LastEditTime: 2021-03-18 16:43:03
  * @LastEditors: watasi
  */
 export default {
@@ -20,7 +20,8 @@ export default {
     script: [
       { src: 'https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.min.js' },
       { src: '/js/echarts.theme.js' },
-      { src: 'https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.20/lodash.min.js' }
+      { src: 'https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.20/lodash.min.js' },
+      { src: 'https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment.min.js' }
     ]
   },
 

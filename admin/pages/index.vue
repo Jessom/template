@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-03-18 16:30:12
+ * @LastEditTime: 2021-03-18 17:43:35
  * @LastEditors: watasi
 -->
 <template>
@@ -15,7 +15,7 @@
           </a-tooltip>
 
           <template slot="total">
-            <span class="ant-money">{{ '1265601' | NumberFormat }}</span>
+            <span class="ant-money">{{ '12651.21' | formatMoney }}</span>
           </template>
 
           <div>
@@ -29,12 +29,12 @@
             </trend>
           </div>
           
-          <template slot="footer">日均销售额<span class="ant-money">123.45</span></template>
+          <template slot="footer">日均销售额<span class="ant-money">{{ 123.45 | formatMoney }}</span></template>
         </chart-card>
       </a-col>
 
       <a-col :span="6">
-        <chart-card :loading="loading" title="访问量" :total="8846 | NumberFormat">
+        <chart-card :loading="loading" title="访问量" :total="8846 | formatMoney">
           <a-tooltip title="指标说明" slot="action">
             <a-icon type="info-circle-o" />
           </a-tooltip>
@@ -44,12 +44,12 @@
             <mini-line :data="line" :opacity="1" />
           </div>
 
-          <template slot="footer">日访问量<span> {{ '1234' | NumberFormat }}</span></template>
+          <template slot="footer">日访问量<span> {{ '1234' | formatMoney }}</span></template>
         </chart-card>
       </a-col>
 
       <a-col :span="6">
-        <chart-card :loading="loading" title="支付笔数" :total="6560 | NumberFormat">
+        <chart-card :loading="loading" title="支付笔数" :total="6560 | formatMoney">
           <a-tooltip title="指标说明" slot="action">
             <a-icon type="info-circle-o" />
           </a-tooltip>
@@ -62,7 +62,7 @@
 
       <a-col :span="6">
         <chart-card :loading="loading" title="运营活动效果" total="78%">
-          <a-tooltip title="指标说明" slot="action">
+          <a-tooltip :title="time.time | formatTime" slot="action">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
@@ -145,6 +145,10 @@ export default {
   data() {
     return {
       loading: true,
+      time: {
+        time: 1616057162556
+      },
+      x: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
       line: [
         { x: '一月', y: 7884 },
         { x: '二月', y: 9006 },
@@ -178,15 +182,17 @@ export default {
   },
 
   mounted() {
-    setTimeout(() => {
-      this.loading = false
+    this.loading = false
+    function getRandom(min, max){
+      return Math.random() * (max - min) + min
+    }
+    setInterval(() => {
+      for(let i=0; i<12; i++) {
+        let value = i + 1 == 12 ? getRandom(9000, 14000) : this.line[i + 1].y
+        this.$set(this.line[i], 'y', value)
+      }
     }, 1500)
   },
-
-  async created() {
-    // const res = await this.$axios.get('/admin/user/info')
-    // console.log(res)
-  }
 }
 </script>
 
