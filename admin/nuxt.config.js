@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-03-17 10:23:21
+ * @LastEditTime: 2021-03-18 10:19:59
  * @LastEditors: watasi
  */
 export default {
@@ -40,6 +40,7 @@ export default {
     '@/plugins/axios',
     '@/plugins/vuels',
     '@/plugins/filter',
+    '@/plugins/component',
     { src: '@/plugins/storage', ssr: false }
   ],
 

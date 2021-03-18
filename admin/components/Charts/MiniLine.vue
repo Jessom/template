@@ -2,76 +2,58 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-17 09:46:48
- * @LastEditTime: 2021-03-17 13:28:36
+ * @LastEditTime: 2021-03-18 16:07:48
  * @LastEditors: watasi
 -->
 <template>
-  <div class="charts-mini-line">
-    <div id="mini-line"></div>
-  </div>
+  <chart :data="dataSource" class="mini-chat" />
 </template>
 
 <script>
+import { Chart } from '@/components'
 export default {
+  name: 'MiniLine',
+
+  components: { Chart },
+
   data() {
-    return {
-      miniLine: null,
-      miniLineDom: null,
-    };
+    return {};
   },
 
-  mounted() {
-    this.init()
+  props: {
+    data: {
+      type: [Array, Object],
+      required: true
+    }
   },
 
-  methods: {
-    init() {
-      if (!this.miniLineDom)
-        this.miniLineDom = document.querySelector("#mini-line");
-      if (!this.miniLine)
-        this.miniLine = echarts.init(this.miniLineDom, "shine");
-    },
+  computed: {
+    dataSource() {
+      let x = [], y = [];
+      for(let i=0; i<this.data.length; i++) {
+        x.push(this.data[i].x)
+        y.push(this.data[i].y)
+      }
 
-    setData(options) {
-      let option = _.merge({
-        tooltip: {
-          trigger: "axis"
-        },
-        grid: {
-          left: "0",
-          right: "0",
-          bottom: "0",
-          top: "50",
-          containLabel: false,
-        },
+      return {
         xAxis: {
           show: false,
           type: "category",
-          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        },
-        yAxis: {
-          show: false,
-          type: "value",
+          data: x,
         },
         series: [
           {
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            data: y,
             type: 'line',
             smooth: true,
             showSymbol: false,
           },
         ],
-      }, options);
-
-      this.miniLine.setOption(option)
-    },
+      }
+    }
   },
 };
 </script>
 
 <style lang="less">
-#mini-line {
-  width: 100%;
-  height: 100px;
-}
 </style>

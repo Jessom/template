@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-09 09:23:37
- * @LastEditTime: 2021-03-17 17:01:45
+ * @LastEditTime: 2021-03-18 10:32:12
  * @LastEditors: watasi
 -->
 <template>
@@ -46,7 +46,7 @@
 
 <script>
 export default {
-  name: 'pageView',
+  name: 'page-view',
 
   data () {
     return {}
@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style lang="less" spcoed>
+<style lang="less" scoped>
 .page-view {
   .page-top {
     padding: 16px 24px;

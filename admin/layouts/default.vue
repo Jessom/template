@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-03-17 17:01:18
+ * @LastEditTime: 2021-03-18 13:20:44
  * @LastEditors: watasi
 -->
 <template>
@@ -57,7 +57,7 @@
           <div class="pull-right header-right">
             <a-dropdown>
               <a class="header-index" @click="e => e.preventDefault()">
-                <a-avatar size="small" icon="user" />
+                <a-avatar size="small" icon="user" :src="logo" />
                 管理员
               </a>
               <a-menu slot="overlay" style="width: 160px;">
@@ -101,6 +101,10 @@
 
         <a-layout-content :class="{'t': collapsed}">
           <Nuxt />
+
+          <!-- <div class="copy-right">
+            <a href="">watasi</a>提供技术支持
+          </div> -->
         </a-layout-content>
       </a-layout>
     </a-layout>
@@ -219,7 +223,10 @@ export default {
 #components-layout-demo-custom-trigger .icon:hover {
   color: var(--theme);
 }
-
+.copy-right {
+  text-align: center;
+  margin: 40px 0 24px;
+}
 /* #components-layout-demo-custom-trigger .logo {
   height: 32px;
   background: rgba(255, 255, 255, 0.2);

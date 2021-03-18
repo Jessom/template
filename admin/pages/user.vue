@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-10 16:19:32
- * @LastEditTime: 2021-03-17 15:15:19
+ * @LastEditTime: 2021-03-18 10:20:38
  * @LastEditors: watasi
 -->
 <template>
@@ -95,6 +95,8 @@
         </span>
 
         <template slot="action" slot-scope="text, record">
+          <a @click="handleEdit(record)">查看</a>
+          <a-divider type="vertical" />
           <a @click="handleEdit(record)">禁用</a>
         </template>
       </a-table>
@@ -104,11 +106,8 @@
 </template>
 
 <script>
-import { PageView } from '@/components'
 export default {
   name: 'user',
-
-  components: { PageView },
 
   data() {
     return {

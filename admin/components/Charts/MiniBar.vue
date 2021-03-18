@@ -2,71 +2,59 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-17 09:46:48
- * @LastEditTime: 2021-03-17 13:28:02
+ * @LastEditTime: 2021-03-18 15:49:51
  * @LastEditors: watasi
 -->
 <template>
-  <div class="charts-mini-bar">
-    <div id="mini-bar"></div>
-  </div>
+  <chart :data="dataSource" class="mini-chat" />
 </template>
 
 <script>
+import { Chart } from '@/components'
 export default {
+  name: 'MiniBar',
+
+  components: { Chart },
+
   data() {
-    return {
-      miniBar: null,
-      miniBarDom: null,
-    };
+    return {};
   },
 
-  mounted() {
-    this.init()
+  props: {
+    data: {
+      type: [Array, Object],
+      required: true
+    }
   },
 
-  methods: {
-    init() {
-      if (!this.miniBarDom)
-        this.miniBarDom = document.querySelector("#mini-bar");
-      if (!this.miniBar)
-        this.miniBar = echarts.init(this.miniBarDom, "shine");
-    },
+  computed: {
+    dataSource() {
+      let x = [], y = [];
+      for(let i=0; i<this.data.length; i++) {
+        x.push(this.data[i].x)
+        y.push(this.data[i].y)
+      }
 
-    setData(options) {
-      let option = _.merge({
+      return {
         tooltip: {
-          trigger: "axis",
           axisPointer: {
             type: 'shadow'
           }
         },
-        grid: {
-          left: "0",
-          right: "0",
-          bottom: "0",
-          top: "50",
-          containLabel: false,
-        },
         xAxis: {
           show: false,
           type: "category",
-          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        },
-        yAxis: {
-          show: false,
-          type: "value",
+          data: x,
         },
         series: [
           {
-            data: [120, 200, 150, 80, 70, 110, 130],
+            data: y,
             type: "bar",
-            barWidth: 20
+            barWidth: 10
           },
-        ],
-      }, options);
-
-      this.miniBar.setOption(option)
-    },
+        ]
+      }
+    }
   },
 };
 </script>
