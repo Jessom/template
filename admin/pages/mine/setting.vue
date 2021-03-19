@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-18 17:19:47
- * @LastEditTime: 2021-03-18 18:03:29
+ * @LastEditTime: 2021-03-19 11:14:15
  * @LastEditors: watasi
 -->
 <template>
@@ -47,7 +47,7 @@
             </a-col>
 
             <a-col :span="8">
-              <div class="ant-upload-preview">
+              <div class="ant-upload-preview" @click="$refs.modal.edit(1)">
                 <a-icon type="cloud-upload-o" class="upload-icon" />
                 <div class="mask">
                   <a-icon type="plus" />
@@ -59,17 +59,30 @@
         </div>
       </div>
     </a-card>
+
+    <avatar-modal ref="modal" @ok="onCropper" />
   </div>
 </template>
 
 <script>
 import { logo } from "@/pages/utils/config";
+import { AvatarModal } from '@/components'
 export default {
+  name: 'setting',
+
+  components: { AvatarModal },
+
   data() {
     return {
       logo,
     };
   },
+
+  methods: {
+    onCropper(e) {
+      this.logo = e
+    }
+  }
 };
 </script>
 

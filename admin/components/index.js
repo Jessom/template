@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-17 10:10:24
- * @LastEditTime: 2021-03-18 16:08:16
+ * @LastEditTime: 2021-03-19 13:54:01
  * @LastEditors: watasi
  */
 // charts
@@ -20,8 +20,13 @@ import RankList from './Charts/RankList'
 import PageView from './PageView'
 
 import Trend from './Trend'
+import AvatarModal from './Avatar/AvatarModal'
+
+// rich text
+import Tinymce from './RichText/Tinymce'
 
 export {
+  // chart
   ChartCard,
   Chart,
   MiniArea,
@@ -32,7 +37,12 @@ export {
   Pie,
   RankList,
 
+  // layout
   PageView,
   
   Trend,
+  AvatarModal,
+
+  // rich text
+  Tinymce,
 }

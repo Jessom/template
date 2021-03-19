@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-17 15:22:37
- * @LastEditTime: 2021-03-17 16:51:52
+ * @LastEditTime: 2021-03-19 09:37:12
  * @LastEditors: watasi
 -->
 <template>
@@ -33,7 +33,7 @@
           size="large"
           type="password"
           autocomplete="false"
-          placeholder="密码: admin or ant.design"
+          placeholder="请输入密码"
           v-decorator="[
             'password',
             {rules: [{ required: true, message: '请输入密码' }], validateTrigger: 'blur'}

@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-03-18 17:21:14
+ * @LastEditTime: 2021-03-19 13:51:34
  * @LastEditors: watasi
 -->
 <template>
@@ -62,7 +62,7 @@
               </a>
               <a-menu slot="overlay" style="width: 160px;">
                 <a-menu-item>
-                  <nuxt-link to="/mine/setting">
+                  <nuxt-link to="/mine/account">
                     <a-icon type="user" />
                     <span>个人中心</span>
                   </nuxt-link>
@@ -75,8 +75,10 @@
                 </a-menu-item>
                 <a-menu-item class="ant-dropdown-menu-item-divider" style="padding: 0;"></a-menu-item>
                 <a-menu-item>
-                  <a-icon type="logout" />
-                  <span>退出登录</span>
+                  <nuxt-link to="/mine/login">
+                    <a-icon type="logout" />
+                    <span>退出登录</span>
+                  </nuxt-link>
                 </a-menu-item>
               </a-menu>
             </a-dropdown>

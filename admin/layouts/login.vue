@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-17 15:24:56
- * @LastEditTime: 2021-03-17 15:41:53
+ * @LastEditTime: 2021-03-19 09:36:36
  * @LastEditors: watasi
 -->
 <template>
@@ -13,7 +13,7 @@
           <img class="logo" :src="logo" :alt="title">
           <span class="title">{{ title }}</span>
         </div>
-        <div class="desc">分享，共创美好世界！</div>
+        <div class="desc">分享，共创美好世界</div>
       </div>
 
       <div class="user-layout-body">
