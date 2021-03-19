@@ -1,0 +1,68 @@
+@font-face {font-family: "wa";
+  src: url('//at.alicdn.com/t/font_2391755_5xqnqxgfe2a.eot?t=1616145675004'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_2391755_5xqnqxgfe2a.eot?t=1616145675004#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
+  url('//at.alicdn.com/t/font_2391755_5xqnqxgfe2a.woff?t=1616145675004') format('woff'),
+  url('//at.alicdn.com/t/font_2391755_5xqnqxgfe2a.ttf?t=1616145675004') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_2391755_5xqnqxgfe2a.svg?t=1616145675004#wa') format('svg'); /* iOS 4.1- */
+}
+
+.wa {
+  font-family: "wa" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wa-yanzhengma:before {
+  content: "\e623";
+}
+
+.wa-shouji1:before {
+  content: "\e6f0";
+}
+
+.wa-shouji:before {
+  content: "\e6ac";
+}
+
+.wa-user:before {
+  content: "\e7ae";
+}
+
+.wa-lock:before {
+  content: "\e7c9";
+}
+
+.wa-wode-copy:before {
+  content: "\f12f";
+}
+
+.wa-xiaoxi-copy:before {
+  content: "\f130";
+}
+
+.wa-shouye-copy:before {
+  content: "\f131";
+}
+
+.wa-gouwuche:before {
+  content: "\f0f5";
+}
+
+.wa-wode:before {
+  content: "\f12a";
+}
+
+.wa-xiaoxi:before {
+  content: "\f12b";
+}
+
+.wa-shouye:before {
+  content: "\f12d";
+}
+
+.wa-gouwuche-copy:before {
+  content: "\f12e";
+}

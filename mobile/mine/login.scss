@@ -1,0 +1,12 @@
+.login-form {
+	/deep/.u-form-item__body {
+		background-color: rgba(#999, 0.1);
+		border-radius: 6rpx;
+		padding: 0 20rpx;
+		.wa {
+			margin-right: 10rpx;
+			color: $u-type-primary;
+			vertical-align: middle;
+		}
+	}
+}

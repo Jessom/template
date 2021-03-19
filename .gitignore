@@ -13,6 +13,10 @@ yarn-error.log*
 */yarn-error.log*
 */dist
 */.nuxt
+*/unpackage/cache
+*/unpackage/dist
+*/unpackage/release
+*/.hbuilderx
 
 # Runtime data
 pids

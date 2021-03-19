@@ -1,0 +1,123 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabbar/home",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true
+			}
+
+		}, {
+			"path": "pages/tabbar/car",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/tabbar/message",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/tabbar/mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"subPackages": [{
+		"root": "mine",
+		"pages": [{
+			"path": "login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false,
+				"disableScroll": true,
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		}, {
+			"path": "register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"enablePullDownRefresh": false,
+				"disableScroll": true,
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		}, {
+			"path": "forget",
+			"style": {
+				"navigationBarTitleText": "找回密码",
+				"enablePullDownRefresh": false,
+				"disableScroll": true,
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+
+		}, {
+			"path": "tellogin",
+			"style": {
+				"navigationBarTitleText": "验证码登录",
+				"enablePullDownRefresh": false,
+				"disableScroll": true,
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+
+		}]
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uView",
+		"navigationBarBackgroundColor": "#FF1268",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#909399",
+		"selectedColor": "#303133",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/tabbar/home",
+			"iconPath": "static/tabbar/home.png",
+			"selectedIconPath": "static/tabbar/home_s.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/tabbar/car",
+			"iconPath": "static/tabbar/shop.png",
+			"selectedIconPath": "static/tabbar/shop_s.png",
+			"text": "购物车"
+		}, {
+			"pagePath": "pages/tabbar/message",
+			"iconPath": "static/tabbar/message.png",
+			"selectedIconPath": "static/tabbar/message_s.png",
+			"text": "消息"
+		}, {
+			"pagePath": "pages/tabbar/mine",
+			"iconPath": "static/tabbar/mine.png",
+			"selectedIconPath": "static/tabbar/mine_s.png",
+			"text": "我的"
+		}]
+	}
+}
