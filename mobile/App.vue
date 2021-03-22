@@ -17,4 +17,7 @@
 	@import './static/iconfont/iconfont.css';
 	/*每个页面公共css */
 	.theme-color { color: $u-type-primary; }
+	page {
+		background-color: #f8f8f8;
+	}
 </style>
