@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-19 13:53:06
- * @LastEditTime: 2021-03-19 14:39:05
+ * @LastEditTime: 2021-03-25 09:20:16
  * @LastEditors: watasi
 -->
 <template>
@@ -25,7 +25,7 @@ export default {
       // toolbar: false, //隐藏工具栏
       // menubar: false, //隐藏菜单栏
       // inline: true, //开启内联模式
-      plugins: [ 'quickbars','link','table','image' ], //选择需加载的插件
+      plugins: [ 'link','table','image' ], //选择需加载的插件
       toolbar: 'undo redo | forecolor backcolor bold italic underline strikethrough link image | alignleft aligncenter alignright alignjustify outdent indent | blockquote subscript superscript | bullist numlist',
       images_upload_handler: function(blobInfo, succFun, failFun) {
         console.log(blobInfo);
