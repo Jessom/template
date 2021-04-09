@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-18 14:03:07
- * @LastEditTime: 2021-03-18 15:47:12
+ * @LastEditTime: 2021-04-09 13:22:09
  * @LastEditors: watasi
 -->
 <template>
@@ -40,6 +40,13 @@ export default {
       },
       deep: true,
       immediate: true
+    }
+  },
+
+  mounted() {
+    window.onresize = () => {
+      console.log(this.chartObj);
+      this.chartObj && this.chartObj.resize()
     }
   },
 

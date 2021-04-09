@@ -2,13 +2,13 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-03-18 17:43:35
+ * @LastEditTime: 2021-04-09 12:11:09
  * @LastEditors: watasi
 -->
 <template>
   <div class="container">
     <a-row :gutter="24">
-      <a-col :span="6">
+      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6">
         <chart-card :loading="loading" title="总销售额">
           <a-tooltip title="指标说明" slot="action">
             <a-icon type="info-circle-o" />
@@ -33,7 +33,7 @@
         </chart-card>
       </a-col>
 
-      <a-col :span="6">
+      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6">
         <chart-card :loading="loading" title="访问量" :total="8846 | formatMoney">
           <a-tooltip title="指标说明" slot="action">
             <a-icon type="info-circle-o" />
@@ -48,7 +48,7 @@
         </chart-card>
       </a-col>
 
-      <a-col :span="6">
+      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6">
         <chart-card :loading="loading" title="支付笔数" :total="6560 | formatMoney">
           <a-tooltip title="指标说明" slot="action">
             <a-icon type="info-circle-o" />
@@ -60,7 +60,7 @@
         </chart-card>
       </a-col>
 
-      <a-col :span="6">
+      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6">
         <chart-card :loading="loading" title="运营活动效果" total="78%">
           <a-tooltip :title="time.time | formatTime" slot="action">
             <a-icon type="info-circle-o" />

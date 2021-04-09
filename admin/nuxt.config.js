@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-03-19 13:50:44
+ * @LastEditTime: 2021-04-08 18:11:20
  * @LastEditors: watasi
  */
 export default {
@@ -42,10 +42,11 @@ export default {
     '@/plugins/antd-ui',
     '@/plugins/nprogress',
     '@/plugins/axios',
-    '@/plugins/vuels',
+    // '@/plugins/vuels',
     '@/plugins/filter',
     '@/plugins/component',
-    { src: '@/plugins/storage', ssr: false }
+    { src: '@/plugins/storage', ssr: false },
+    { src: '@/plugins/device', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

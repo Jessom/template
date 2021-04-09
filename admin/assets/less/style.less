@@ -111,3 +111,19 @@ body { background-color: #f0f2f5; }
     box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, inset 1px 0 0 0 #e8e8e8, inset 0 1px 0 0 #e8e8e8;
   }
 }
+
+
+
+.ant-layout-sider {
+  box-shadow: 0 0 0 !important;
+  &.shadow {
+    box-shadow: 2px 0 6px rgb(0 21 41 / 35%) !important;
+  }
+  &.ant-fixed-sidemenu {
+    position: fixed;
+    height: 100%;
+  }
+  .ant-layout-sider-children {
+    overflow-y: scroll;
+  }
+}
