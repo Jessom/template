@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-10 16:19:32
- * @LastEditTime: 2021-03-18 10:20:38
+ * @LastEditTime: 2021-04-09 17:07:09
  * @LastEditors: watasi
 -->
 <template>
@@ -120,7 +120,7 @@ export default {
       },
       loading: true,
       columns: [
-        { title: '#', key: 'index', scopedSlots: { customRender: 'serial' } },
+        { title: '序号', key: 'index', scopedSlots: { customRender: 'serial' } },
         { title: '账号', dataIndex: 'account' },
         { title: '昵称', dataIndex: 'nick' },
         { title: '是否会员', dataIndex: 'isVip', scopedSlots: { customRender: 'isVip' } },

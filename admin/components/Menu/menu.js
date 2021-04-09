@@ -77,11 +77,18 @@ export default {
     updateMenu () {
       const routes = this.$route.matched.concat()
       const { hidden } = this.$route.meta
-      if (routes.length >= 3 && hidden) {
+      
+      /* if (routes.length >= 3 && hidden) {
         routes.pop()
         this.selectedKeys = [routes[routes.length - 1].path]
       } else {
         this.selectedKeys = [routes.pop().path]
+      } */
+      if (routes.length >= 3 && hidden) {
+        routes.pop()
+        this.selectedKeys = [routes[routes.length - 1].path]
+      } else {
+        this.selectedKeys = [routes.pop().path || '/']
       }
       const openKeys = []
       if (this.mode === 'inline') {
@@ -90,7 +97,8 @@ export default {
         })
       }
 
-      this.collapsed ? (this.cachedOpenKeys = openKeys) : (this.openKeys = openKeys)
+      // this.collapsed ? (this.cachedOpenKeys = openKeys) : (this.openKeys = openKeys)
+      this.collapsed ? (this.openKeys = openKeys) : (this.cachedOpenKeys = openKeys)
     },
 
     // render
@@ -102,8 +110,9 @@ export default {
     },
     renderMenuItem (menu) {
       const target = menu.meta.target || null
-      const CustomTag = target && 'a' || 'router-link'
-      const props = { to: { name: menu.name } }
+      const CustomTag = target && 'a' || 'nuxt-link'
+      // const props = { to: { name: menu.name } }
+      const props = { to: { path: menu.path } }
       const attrs = { href: menu.path, target: menu.meta.target }
 
       if (menu.children && menu.hideChildrenInMenu) {

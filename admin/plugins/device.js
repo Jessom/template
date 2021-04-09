@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-04-08 18:08:49
- * @LastEditTime: 2021-04-08 18:39:07
+ * @LastEditTime: 2021-04-09 16:22:21
  * @LastEditors: watasi
  */
 import enquireJs from 'enquire.js'
@@ -38,17 +38,17 @@ export default ({ app }) => {
   deviceEnquire(deviceType => {
     switch (deviceType) {
       case 'desktop':
-        // app.store.commit('TOGGLE_DEVICE', 'desktop')
         app.store.dispatch('app/ToggleDevice', 'desktop')
+        app.store.dispatch('app/ToggleCollapsed', false)
         break
       case 'tablet':
-        // app.store.commit('TOGGLE_DEVICE', 'tablet')
         app.store.dispatch('app/ToggleDevice', 'tablet')
+        app.store.dispatch('app/ToggleCollapsed', true)
         break
       case 'mobile':
       default:
-        // app.store.commit('app/TOGGLE_DEVICE', 'mobile')
         app.store.dispatch('app/ToggleDevice', 'mobile')
+        app.store.dispatch('app/ToggleCollapsed', false)
         break
     }
   })

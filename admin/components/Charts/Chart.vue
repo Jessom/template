@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-18 14:03:07
- * @LastEditTime: 2021-04-09 13:22:09
+ * @LastEditTime: 2021-04-09 16:28:34
  * @LastEditors: watasi
 -->
 <template>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'Chart',
 
@@ -33,6 +34,12 @@ export default {
     }
   },
 
+  computed: {
+    ...mapState({
+      collapsed: state => state.app.collapsed
+    })
+  },
+
   watch: {
     data: {
       handler: function(val) {
@@ -40,14 +47,17 @@ export default {
       },
       deep: true,
       immediate: true
+    },
+
+    collapsed(val) {
+      this.chartObj && this.chartObj.resize()
     }
   },
 
   mounted() {
-    window.onresize = () => {
-      console.log(this.chartObj);
+    window.addEventListener('resize', () => {
       this.chartObj && this.chartObj.resize()
-    }
+    })
   },
 
   methods: {

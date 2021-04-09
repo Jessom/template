@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-09 09:23:37
- * @LastEditTime: 2021-03-18 10:32:12
+ * @LastEditTime: 2021-04-09 18:01:26
  * @LastEditors: watasi
 -->
 <template>
@@ -32,7 +32,7 @@
       </div>
 
       <!-- footer -->
-      <div class="page-footer" v-if="$slots.footer">
+      <div class="page-footer" v-if="$slots.footer" :style="{'margin-top': `${footerMatinTop}px`}">
         <slot name="footer"></slot>
       </div>
     </div>
@@ -60,6 +60,11 @@ export default {
 
     title: {
       type: String
+    },
+
+    footerMatinTop: {
+      type: [Number, String],
+      default: 16
     }
   },
   
@@ -77,6 +82,9 @@ export default {
     background-color: #fff;
     &.page-has-footer {
       padding-bottom: 0;
+      /deep/.ant-tabs-bar {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -105,7 +113,7 @@ export default {
   margin-top: 12px;
 }
 .page-footer {
-  margin-top: 16px;
+  // margin-top: 16px;
   .ant-tabs-bar.ant-tabs-top-bar {
     margin-bottom: 0;
   }

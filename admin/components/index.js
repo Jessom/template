@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-17 10:10:24
- * @LastEditTime: 2021-03-19 13:54:01
+ * @LastEditTime: 2021-04-09 17:46:52
  * @LastEditors: watasi
  */
 // charts
@@ -25,6 +25,8 @@ import AvatarModal from './Avatar/AvatarModal'
 // rich text
 import Tinymce from './RichText/Tinymce'
 
+import DescriptionList from './DescriptionList'
+
 export {
   // chart
   ChartCard,
@@ -45,4 +47,6 @@ export {
 
   // rich text
   Tinymce,
+
+  DescriptionList,
 }

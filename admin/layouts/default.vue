@@ -2,14 +2,13 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-04-09 12:05:00
+ * @LastEditTime: 2021-04-09 17:38:47
  * @LastEditors: watasi
 -->
 <template>
   <a-config-provider :locale="locale">
     <a-layout id="components-layout-demo-custom-trigger">
 
-      <!-- :wrapClassName="`drawer-sider ${navTheme}`" -->
       <a-drawer
         v-if="isMobile"
         placement="left"
@@ -31,6 +30,7 @@
         :menus="menus"
         :collapsed="collapsed"
         :collapsible="true"
+        @menuSelect="menuSelect"
       ></side-menu>
 
       <a-layout :style="{ paddingLeft: contentPaddingLeft, minHeight: '100vh' }">
@@ -38,7 +38,7 @@
           <a-icon
             class="trigger icon"
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-            @click="() => (collapsed = !collapsed)"
+            @click="$store.dispatch('app/ToggleCollapsed', !collapsed)"
           />
           <a-icon type="reload" class="icon" />
 
@@ -110,20 +110,17 @@
 
 <script>
 import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
-import { title, logo } from "@/pages/utils/config";
+import { logo } from "@/pages/utils/config";
 import SideMenu from "@/components/Menu/SideMenu";
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 export default {
   components: { SideMenu },
   data() {
     return {
-      title,
       logo,
-      collapsed: this.isDesktop || this.isMobile ? true : false,
       locale: zhCN,
-      selected: [this.$route.path],
       menus: [
-        { path: "/", meta: { title: "仪表盘", icon: "dashboard" }, name: "" },
+        { path: "/", meta: { title: "仪表盘", icon: "dashboard" }, name: "/" },
         { path: "/user", meta: { title: "用户管理", icon: "user" }, name: "user" },
         {
           path: "/order",
@@ -133,7 +130,7 @@ export default {
           },
           name: "order",
           children: [
-            { path: "/order-get", meta: { title: "提现管理", icon: "" }, name: "orderGet" },
+            { path: "/order/withdrawal", meta: { title: "提现管理", icon: "" }, name: "withdrawal" },
             { path: "/order-back", meta: { title: "退款管理", icon: "" }, name: "orderBack" },
           ],
         },
@@ -159,6 +156,9 @@ export default {
       isDesktop: 'app/isDesktop',
       isTablet: 'app/isTablet'
     }),
+    ...mapState({
+      collapsed: state => state.app.collapsed
+    }),
     contentPaddingLeft () {
       if (this.isMobile) {
         return '0'
@@ -176,7 +176,11 @@ export default {
 
   methods: {
     drawerClose () {
-      this.collapsed = false
+      this.$stroe.dispatch('ToggleCollapsed', false)
+    },
+
+    menuSelect(e) {
+      console.log(e);
     }
   }
 };
@@ -232,30 +236,7 @@ export default {
     padding-left: 80px;
   }
 }
-.sider-menu-logo {
-  padding: 16px;
-  padding-left: 24px;
-  height: 64px;
-  overflow: hidden;
-  .logo {
-    @size: 32px;
-    width: 32px;
-    height: 32px;
-  }
-  h1 {
-    // font-family: "webfont" !important;
-    // font-style: normal;
-    // -webkit-font-smoothing: antialiased;
-    // -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
-    color: #fff;
-    font-size: 20px;
-    margin: 0 0 0 8px;
-    font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    vertical-align: middle;
-  }
-}
+
 #components-layout-demo-custom-trigger .icon {
   font-size: 18px;
   line-height: 64px;

@@ -2,11 +2,11 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-18 11:07:31
- * @LastEditTime: 2021-03-18 11:07:45
+ * @LastEditTime: 2021-04-09 16:56:24
  * @LastEditors: watasi
 -->
 <template>
-  <div class="rank">
+  <div class="rank" :style="{'padding-left': isMobile ? '32px' : '72px'}">
     <h4 class="title">{{ title }}</h4>
     <ul class="list">
       <li :key="index" v-for="(item, index) in list">
@@ -19,9 +19,12 @@
 </template>
 
 <script>
+import { mixin } from '@/pages/utils/mixin'
 export default {
   name: 'RankList',
-  // ['title', 'list']
+  
+  mixins: [mixin],
+
   props: {
     title: {
       type: String,

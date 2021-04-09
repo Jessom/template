@@ -2,13 +2,13 @@
  * @Description: 
  * @Author: watasi
  * @Date: 2021-03-08 15:50:54
- * @LastEditTime: 2021-04-09 12:11:09
+ * @LastEditTime: 2021-04-09 16:53:29
  * @LastEditors: watasi
 -->
 <template>
   <div class="container">
     <a-row :gutter="24">
-      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6">
+      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6" :style="{ marginBottom: '24px' }">
         <chart-card :loading="loading" title="总销售额">
           <a-tooltip title="指标说明" slot="action">
             <a-icon type="info-circle-o" />
@@ -33,7 +33,7 @@
         </chart-card>
       </a-col>
 
-      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6">
+      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6" :style="{ marginBottom: '24px' }">
         <chart-card :loading="loading" title="访问量" :total="8846 | formatMoney">
           <a-tooltip title="指标说明" slot="action">
             <a-icon type="info-circle-o" />
@@ -48,7 +48,7 @@
         </chart-card>
       </a-col>
 
-      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6">
+      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6" :style="{ marginBottom: '24px' }">
         <chart-card :loading="loading" title="支付笔数" :total="6560 | formatMoney">
           <a-tooltip title="指标说明" slot="action">
             <a-icon type="info-circle-o" />
@@ -60,7 +60,7 @@
         </chart-card>
       </a-col>
 
-      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6">
+      <a-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6" :style="{ marginBottom: '24px' }">
         <chart-card :loading="loading" title="运营活动效果" total="78%">
           <a-tooltip :title="time.time | formatTime" slot="action">
             <a-icon type="info-circle-o" />
@@ -82,10 +82,10 @@
       </a-col>
     </a-row>
 
-    <a-card :loading="loading" class="m-t-24" :bordered="false" :body-style="{padding: '0'}">
+    <a-card :loading="loading" :bordered="false" :body-style="{padding: '0'}">
       <div class="salesCard">
         <a-tabs default-active-key="1" size="large" :tab-bar-style="{marginBottom: '24px', paddingLeft: '16px'}">
-          <div class="extra-wrapper" slot="tabBarExtraContent">
+          <div class="extra-wrapper" slot="tabBarExtraContent" v-if="isDesktop || isTablet">
             <div class="extra-item">
               <a>今日</a>
               <a>本周</a>
@@ -97,11 +97,11 @@
 
           <a-tab-pane loading="true" tab="销售额" key="1">
             <a-row>
-              <a-col :span="16">
+              <a-col :xs="24" :sm="24" :md="12" :lg="16" :xl="16" :xxl="16">
                 <bar :data="line" />
               </a-col>
 
-              <a-col :span="8">
+              <a-col :xs="24" :sm="24" :md="12" :lg="8" :xl="8" :xxl="8">
                 <rank-list title="门店销售排行榜" :list="rankList" />
               </a-col>
             </a-row>
@@ -109,11 +109,11 @@
 
           <a-tab-pane tab="访问量" key="2" forceRender>
             <a-row>
-              <a-col :span="16">
+              <a-col  :xs="24" :sm="24" :md="12" :lg="16" :xl="16" :xxl="16">
                 <line-chart :data="line" :opacity="0.3" />
               </a-col>
 
-              <a-col :span="8">
+              <a-col :xs="24" :sm="24" :md="12" :lg="8" :xl="8" :xxl="8">
                 <rank-list title="门店销售排行榜" :list="rankList" />
               </a-col>
             </a-row>
@@ -121,11 +121,11 @@
 
           <a-tab-pane tab="浏览量" key="3" forceRender>
             <a-row>
-              <a-col :span="16">
+              <a-col  :xs="24" :sm="24" :md="12" :lg="16" :xl="16" :xxl="16">
                 <pie :data="pie" />
               </a-col>
 
-              <a-col :span="8">
+              <a-col :xs="24" :sm="24" :md="12" :lg="8" :xl="8" :xxl="8">
                 <rank-list title="门店销售排行榜" :list="rankList" />
               </a-col>
             </a-row>
@@ -138,9 +138,13 @@
 
 <script>
 import { MiniArea, MiniBar, MiniLine, Bar, Line, Pie, ChartCard, RankList, Trend } from '../components'
+import { mixin } from './utils/mixin'
 export default {
-  components: { MiniArea, MiniBar, MiniLine, Bar, 'line-chart': Line, Pie, ChartCard, RankList, Trend },
   name: 'index',
+
+  components: { MiniArea, MiniBar, MiniLine, Bar, 'line-chart': Line, Pie, ChartCard, RankList, Trend },
+
+  mixins: [mixin],
 
   data() {
     return {
